@@ -1,0 +1,157 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 10px;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  padding: 3rem 10rem;
+  background-color: #f1f1f1
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+.content {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.title h3 {
+  text-align: center;
+  font-size: 5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.card{
+  height: 70vh;
+  width: 70vw;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card h4 {
+  font-size: 2rem;
+}
+.card h3{
+  font-size: 2.5rem;
+  color: #14BDAC;
+  margin-top: .9rem;
+  cursor: pointer;
+}
+
+.player{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0 .5rem 0;
+}
+.player1, .player2{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 20rem;
+  height:4rem;
+  border: 1px solid #ccc;
+  border-radius: .5rem;
+  font-size: 2rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.gameBoard{
+  width: 100%;
+  min-width: 300px;
+  max-width: 500px;
+  height: 300px;
+  /* aspect-ratio: 1 / 1; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows:  repeat(3, 1fr);
+  background-color: #14bdac;
+}
+
+.gridItem {
+  border: 0;
+  border-right: 4px solid #0DA192;
+  border-bottom: 4px solid #0DA192;
+  cursor: pointer;
+}
+
+/* Remove right border from the last column */
+.gridItem:nth-child(3n) {
+  border-right: none;
+}
+
+/* Remove bottom border from the last row (items 7, 8, 9) */
+.gridItem:nth-child(n+7) {
+  border-bottom: none;
+}
