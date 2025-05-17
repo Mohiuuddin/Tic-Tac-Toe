@@ -144,6 +144,11 @@ h6 {
   border-right: 4px solid #0DA192;
   border-bottom: 4px solid #0DA192;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  
 }
 
 /* Remove right border from the last column */
@@ -155,3 +160,12 @@ h6 {
 .gridItem:nth-child(n+7) {
   border-bottom: none;
 }
+
+
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+} 
+
+
