@@ -61,9 +61,9 @@ const GameController = (()=>{
                 renderBoard();
 
                 if(checkWinner(currentPlayer)){
-                  setTimeout(()=> alert(`${currentPlayer.name} wins!`), 100);
+                  setTimeout(()=> alert(`${currentPlayer.name} win!`), 100);
                 } else if(isTie()){
-                  setTimeout(()=>alert("It isa tie!"), 100);
+                  setTimeout(()=>alert("It is a tie!"), 100);
                 } else{
                   switchTurn();
                   if(currentPlayer.isComputer){
@@ -85,7 +85,7 @@ const GameController = (()=>{
         renderBoard();
 
         if (checkWinner(currentPlayer)) {
-      setTimeout(() => alert(`${currentPlayer.name} wins!`), 100);
+      setTimeout(() => alert(`${currentPlayer.name} win!`), 100);
     } else if (isTie()) {
       setTimeout(() => alert("It's a tie!"), 100);
     } else {
